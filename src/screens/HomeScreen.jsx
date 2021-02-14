@@ -45,7 +45,6 @@ HomeScreen.propTypes = {
 };
 
 const mapStateToProps = (state) => {
-  console.log("Home screen state " + JSON.stringify(state.books));
   return {
     isLoading: state.books.isLoading || false,
     books: state.books.books,

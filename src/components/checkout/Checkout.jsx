@@ -135,9 +135,9 @@ const Checkout = ({
               <div className="cell">Quantity</div>
             </div>
 
-            {cartItems.map((item) => {
+            {cartItems.map((item, index) => {
               return (
-                <div className="row">
+                <div key={index} className="row">
                   <div className="cell" data-title="Book">
                     {item.name}
                   </div>
@@ -222,8 +222,8 @@ const Checkout = ({
 Checkout.propTypes = {
   isCheckoutOpen: PropTypes.bool.isRequired,
   cartItems: PropTypes.array.isRequired,
-  totalPrice: PropTypes.number,
-  shouldClearCart: PropTypes.bool,
+  totalPrice: PropTypes.string.isRequired,
+  shouldClearCart: PropTypes.bool.isRequired,
   closeCheckout: PropTypes.func.isRequired,
   clearCart: PropTypes.func.isRequired,
 };

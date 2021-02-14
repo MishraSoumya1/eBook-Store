@@ -41,7 +41,7 @@ CartCard.propTypes = {
   name: PropTypes.string.isRequired,
   description: PropTypes.string.isRequired,
   imgsrc: PropTypes.string.isRequired,
-  price: PropTypes.number.isRequired,
+  price: PropTypes.string.isRequired,
   count: PropTypes.number.isRequired,
   removeItem: PropTypes.func.isRequired,
 };

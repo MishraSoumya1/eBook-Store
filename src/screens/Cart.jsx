@@ -15,8 +15,6 @@ const Cart = ({ cartItems, removeItem, checkoutOpen }) => {
   const calcTotalPrice = (arr) => {
     let sum = 0;
     for (let item of arr) {
-      console.log("Type of Price " + typeof item.price);
-      console.log("Price " + item.price);
       sum += Number(item.count) * convertCurrency(item.price);
     }
     return sum.toFixed(2);
