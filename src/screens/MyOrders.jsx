@@ -6,6 +6,7 @@ const MyOrders = () => {
   const [cartItems, setCartItems] = useState([]);
 
   useEffect(() => {
+    document.title = "eBook Store | Orders";
     const orders = JSON.parse(localStorage.getItem("orders"));
     setCartItems((orders && orders.length > 0 && orders.reverse()) || []);
   }, []);

@@ -10,6 +10,7 @@ const Products = lazy(() => import("../components/products/Products.jsx"));
 
 const HomeScreen = ({ fetchBooks, books, message, isLoading, addToCart }) => {
   useEffect(() => {
+    document.title = "eBook Store | Home";
     fetchBooks();
   }, []);
   return (
