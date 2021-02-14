@@ -1,4 +1,4 @@
-import { BrowserRouter, Route, Link, Switch } from "react-router-dom";
+import { MemoryRouter, Route, Link, Switch } from "react-router-dom";
 import { connect } from "react-redux";
 import { HomeScreen, MyOrders, Cart } from "./screens";
 import Checkout from "./components/checkout/Checkout.jsx";
@@ -6,7 +6,7 @@ import PropTypes from "prop-types";
 
 const App = ({ cartItems }) => {
   return (
-    <BrowserRouter>
+    <MemoryRouter>
       <div className="grid-container">
         <header className="sticky">
           <Link to="/">
@@ -44,7 +44,7 @@ const App = ({ cartItems }) => {
         <Checkout />
         <footer>All rights are reserved to Soumya.</footer>
       </div>
-    </BrowserRouter>
+    </MemoryRouter>
   );
 };
 
