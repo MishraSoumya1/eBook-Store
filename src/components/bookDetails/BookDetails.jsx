@@ -32,9 +32,7 @@ const BookDetails = ({
             </div>
             <div style={{ flex: 3 }}>
               <div className="product-details-description">
-                <p>
-                  <h1>{name}</h1>
-                </p>
+                <h1>{name}</h1>
                 <p>{description ? description : "A Textbook"}</p>
               </div>
             </div>

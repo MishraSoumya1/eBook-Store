@@ -37,31 +37,22 @@ const Checkout = ({
     if (name && email && address) {
       closeCheckout();
       const data = JSON.parse(localStorage.getItem("orders"));
+      const checkOutObj = {
+        books: cartItems.map((data) => data.name).join(", "),
+        count: calcQuantity(cartItems),
+        time: new Date().toLocaleString(),
+        totalPrice,
+        name,
+        email,
+        address,
+      };
       if (data) {
         if (Array.isArray(data)) {
-          data.push({
-            books: cartItems.map((data) => data.name).join(", "),
-            count: calcQuantity(cartItems),
-            time: new Date().toLocaleString(),
-            totalPrice,
-            name,
-            email,
-            address,
-          });
+          data.push(checkOutObj);
         }
         localStorage.setItem("orders", JSON.stringify(data));
       } else {
-        const arr = [
-          {
-            books: cartItems.map((data) => data.name).join(", "),
-            count: calcQuantity(cartItems),
-            time: new Date().toLocaleString(),
-            totalPrice,
-            name,
-            email,
-            address,
-          },
-        ];
+        const arr = [checkOutObj];
         localStorage.setItem("orders", JSON.stringify(arr));
       }
       if (shouldClearCart) {
@@ -222,8 +213,8 @@ const Checkout = ({
 Checkout.propTypes = {
   isCheckoutOpen: PropTypes.bool.isRequired,
   cartItems: PropTypes.array.isRequired,
-  totalPrice: PropTypes.string.isRequired,
-  shouldClearCart: PropTypes.bool.isRequired,
+  totalPrice: PropTypes.string,
+  shouldClearCart: PropTypes.bool,
   closeCheckout: PropTypes.func.isRequired,
   clearCart: PropTypes.func.isRequired,
 };
