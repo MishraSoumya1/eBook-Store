@@ -10,7 +10,7 @@ const App = ({ cartItems }) => {
       <div className="grid-container">
         <header className="sticky">
           <Link to="/">
-            <strong>Book Store</strong>
+            <strong>eBook Store</strong>
           </Link>
           <div
             style={{
